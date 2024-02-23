@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/local/python2.7/bin/python2
 # --------------------------------------------------
 # Copyright The IETF Trust 2011, All Rights Reserved
 # --------------------------------------------------

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/local/python2.7/bin/python2
 #
 # test rig to run messages through postconfirm daemon
 #

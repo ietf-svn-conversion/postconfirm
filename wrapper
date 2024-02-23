@@ -27,6 +27,16 @@ fi
 ## The 'action' argument is set by the caller.  Mailman will set 'action' to one
 ## of "post", "owner", or "admin".  The postfix group-alias and draft-alias lists
 ## will set 'action' to "filter".
+#sjt Ackshually ...
+#sjt The arguments are set by Postfix tables.
+#sjt In the Mailman tables in /var/lib/mailman/data/ (see ops-postfix repo),
+#sjt first 'virtual-mailman' reduces the address to the mailbox
+#sjt then 'aliases' pipes to "$wrapper $action_suffix $list_mailbox", if the
+#sjt action suffix is missing, it is set to "post".  $wrapper is always
+#sjt "/a/postconfirm/mailman" in Mailman's alias table.
+#sjt In the postfix tables in /a/postfix/ (linked from /etc/postfix, see
+#sjt ops-postfix repo), both group-aliases and draft-aliases
+#sjt 
 action="$1"
 dest="$2"
 domain="$3"

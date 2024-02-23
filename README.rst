@@ -6,6 +6,20 @@ This is an alpha release.  While the functionality is sound, the
 packaging is probably not even beta quality.  Compilation of the
 components written in C has only been tested under Linux.
 
+debian-adapted Branch
+---------------------
+
+This is the debian-adapted branch.  It contains patches to .c
+files to quiet the C compiler and adjust the Python bang-path for
+a locally built Python 2 on a host running a recent Debian OS.
+(Debian no longer provides Python 2 packages.)
+
+Versions tested:
+OS: Debian 12.4 Bookworm
+C compiler: Debian clang version 14.0.6 (x86_64-pc-linux-gnu, posix threads)
+C library: 2.36-9+deb12u3
+Python: 2.7.18
+
 Description
 -----------
 

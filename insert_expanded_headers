@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/python2.7/bin/python2
 
 ## Script to insert Resent-From and Resent-To headers into emails received via stdin.
 ##

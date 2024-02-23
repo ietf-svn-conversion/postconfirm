@@ -1,9 +1,11 @@
-CFLAGS=
+PYTHONPREFIX=/usr/local/python2.7
+CFLAGS=-I$(PYTHONPREFIX)/include/python2.7
+LDFLAGS=-L$(PYTHONPREFIX)/lib
 OFLAGS=-pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -fPIC -I/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7
-WFLAGS=-Waggregate-return -Wall -Wcast-align -Wcast-qual -Wconversion -Werror -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wwrite-strings
-SOFLAGS=-pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions 
+WFLAGS=-Waggregate-return -Wall -Wcast-align -Wcast-qual -Wconversion -Wmissing-declarations -Wmissing-prototypes -Wnested-externs -Wpointer-arith -Wredundant-decls -Wstrict-prototypes -Wwrite-strings
+SOFLAGS=$(CFLAGS) -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions 
 
-CC=gcc
+CC=clang
 SHELL=/bin/bash
 
 tool := postconfirmd
@@ -28,7 +30,7 @@ include Makefile.common
 	$(CC) $(CFLAGS) $(WFLAGS) -o $@ $(LDFLAGS) $<
 
 %.o : %.c
-	$(CC) $(OFLAGS) $(WFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(OFLAGS) $(WFLAGS) -o $@ -c $<
 
 %.so : %.o
 	$(CC) $(SOFLAGS) -o $@ $(LDFLAGS) $<

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/local/python2.7/bin/python2
 # -*- python -*-
 
 """
