@@ -1,0 +1,4 @@
+psycopg[pool]
+kilter.service
+config >= 0.5.0
+chevron
